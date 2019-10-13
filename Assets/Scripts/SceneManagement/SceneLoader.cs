@@ -10,17 +10,19 @@ public class SceneLoader : MonoBehaviour
 {
     [SerializeField] const string OpeningScenename = "Sandbox";
     [SerializeField] const string defaultSaveFile = "save";
-    SavingWrapper savingWrapper = null;
+   // SavingWrapper savingWrapper = null;
     SavingSystem savingSystem = null;
+    Fader fader = null;
     
 
     // Start is called before the first frame update
     void Start()
     {
             //   savingWrapper = FindObjectOfType<SavingWrapper>();
-            savingWrapper = GetComponent<SavingWrapper>();
+           // savingWrapper = GetComponent<SavingWrapper>();
+            fader = GetComponent<Fader>();
             savingSystem = FindObjectOfType<SavingSystem>();
-            if(savingWrapper = null) {Debug.LogError("No Saving Wrapper");}
+    //        if(savingWrapper = null) {Debug.LogError("No Saving Wrapper");}
     }
 
     public void LoadSavedGame()
@@ -36,6 +38,7 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadNewGame()
     {
+     //      if(fader != null){ StartCoroutine(fader.Fade(0, );}
             SceneManager.LoadSceneAsync(OpeningScenename);
     }
 
