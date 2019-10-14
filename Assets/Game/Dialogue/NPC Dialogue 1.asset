@@ -17,3 +17,4 @@ MonoBehaviour:
   - Hey old man!
   - whoooo wheep boop
   - bop
+  quest: {fileID: 11400000, guid: 87d53ccef6ac76e4cbfba220a4906245, type: 2}

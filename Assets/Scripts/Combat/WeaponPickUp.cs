@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using RPG.Control;
 using RPG.Attributes;
+using RPG.Movement;
 
 namespace RPG.Combat
 {
@@ -58,7 +59,10 @@ namespace RPG.Combat
         {
             if (Input.GetMouseButtonDown(0))
             {
-                PickUp(callingController.gameObject);
+                callingController.GetComponent<Mover>().StartMoveAction(transform.position, 6);
+
+                // Pickup distant item instantly:
+                // PickUp(callingController.gameObject);
             }
             return true;
         }

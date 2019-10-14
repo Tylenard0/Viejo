@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using RPG.Control;
+using RPG.Movement;
 
 namespace RPG.UI{
 public class DialogueHolder : MonoBehaviour, IRaycastable
@@ -18,7 +19,7 @@ public class DialogueHolder : MonoBehaviour, IRaycastable
 
     private void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject.tag == "Player" && remotelyTriggeredDialogue)
+            if (other.gameObject.tag == "Player")
             {
                 ActivateDialogue(dialogue);
             }
@@ -28,7 +29,8 @@ public class DialogueHolder : MonoBehaviour, IRaycastable
     {
         if (Input.GetMouseButtonDown(0))
         {
-            ActivateDialogue(dialogue);
+            callingController.GetComponent<Mover>().StartMoveAction(transform.position, 6);
+            //ActivateDialogue(dialogue);
         }
         return true;
     }

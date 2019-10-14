@@ -17,12 +17,14 @@ namespace  RPG.UI
         private bool hasQuest = false;
         private AudioSource continueSound = null;
         private Animator uiAnimator = null;
+        private QuestManager questManager = null;
 
 
        private void Awake() 
        {
             continueSound = GetComponentInChildren<AudioSource>();
             uiAnimator = GetComponentInChildren<Animator>();
+            questManager = FindObjectOfType<QuestManager>();
        }
 
         void Start()
@@ -106,6 +108,7 @@ namespace  RPG.UI
 
             if(hasQuest)
             {
+                questManager.DisplayQuest(quest);
                 print("Has Quest " + quest.name + ".  All you have to is " +  quest.questDescription + " Rewards of " + quest.experienceReward + " experience, " + quest.goldReward + " gold!");
                 if(quest.itemReward != null){print(" There is also a " + quest.itemReward.name + " in it for ya!");}
             }

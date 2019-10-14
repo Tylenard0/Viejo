@@ -12,3 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a13c55b7fee361b48a97cc18d178767e, type: 3}
   m_Name: SampleQuest
   m_EditorClassIdentifier: 
+  isQuestActive: 0
+  isQuestComplete: 0
+  questName: Test yo Quest
+  questDescription: Kill 3 soldiers
+  goals:
+    goalType: 0
+    requiredAmount: 3
+    currentAmount: 0
+    goalName: soldier
+  experienceReward: 50
+  goldReward: 15
+  itemReward: {fileID: 3204912803991131978, guid: b5c74c892e34f314aa657315a8c7fa4d,
+    type: 3}
