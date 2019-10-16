@@ -29,7 +29,9 @@ public class DialogueHolder : MonoBehaviour, IRaycastable
     {
         if (Input.GetMouseButtonDown(0))
         {
-            callingController.GetComponent<Mover>().StartMoveAction(transform.position, 6);
+            Vector3 newDestination = this.transform.position;
+            newDestination = newDestination + (this.transform.forward * 2);
+            callingController.GetComponent<Mover>().StartMoveAction(newDestination,  6);
             //ActivateDialogue(dialogue);
         }
         return true;

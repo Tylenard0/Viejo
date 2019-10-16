@@ -109,8 +109,8 @@ namespace  RPG.UI
             if(hasQuest)
             {
                 questManager.DisplayQuest(quest);
-                print("Has Quest " + quest.name + ".  All you have to is " +  quest.questDescription + " Rewards of " + quest.experienceReward + " experience, " + quest.goldReward + " gold!");
-                if(quest.itemReward != null){print(" There is also a " + quest.itemReward.name + " in it for ya!");}
+               // print("Has Quest " + quest.name + ".  All you have to is " +  quest.questDescription + " Rewards of " + quest.experienceReward + " experience, " + quest.goldReward + " gold!");
+              //  if(quest.itemReward != null){print(" There is also a " + quest.itemReward.name + " in it for ya!");}
             }
 
             PlayerController newplayerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
