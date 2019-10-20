@@ -42,7 +42,9 @@ public class QuestManager : MonoBehaviour
             // newplayerController.enabled = false;
             //   continueSound = GetComponentInChildren<AudioSource>();
             Animator uiAnimator = GetComponentInChildren<Animator>();
-            if(uiAnimator != null) {uiAnimator.SetBool("OpenDialogueBox", true);}
+            if(uiAnimator != null) 
+            {uiAnimator.SetBool("OpenUIBox", true);}
+            else print("No uiAnimator found by Quest MGR");
             AddQuestToManager(quest);
         }
 
@@ -55,7 +57,7 @@ public class QuestManager : MonoBehaviour
         private void HideQuestMenuUI()
         {
             Animator uiAnimator = GetComponentInChildren<Animator>();
-            if (uiAnimator != null) { uiAnimator.SetBool("OpenDialogueBox", false); }
+            if (uiAnimator != null) { uiAnimator.SetBool("OpenUIBox", false); }
         }
 
     }

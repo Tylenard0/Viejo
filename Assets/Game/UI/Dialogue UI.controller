@@ -9,7 +9,7 @@ AnimatorController:
   m_Name: Dialogue UI
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: OpenDialogueBox
+  - m_Name: OpenUIBox
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -37,7 +37,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: OpenDialogueBox
+    m_ConditionEvent: OpenUIBox
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102639543026816890}
@@ -62,7 +62,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: OpenDialogueBox
+    m_ConditionEvent: OpenUIBox
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102537303974534366}
@@ -162,7 +162,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: hidden
-  m_Speed: 1
+  m_Speed: -1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101466109626829484}

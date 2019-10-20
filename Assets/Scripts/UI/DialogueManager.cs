@@ -58,7 +58,7 @@ namespace  RPG.UI
         {
             PlayerController newplayerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
             newplayerController.enabled = false;
-            uiAnimator.SetBool("OpenDialogueBox", true);
+            uiAnimator.SetBool("OpenUIBox", true);
             AddDialogueToManager(dialogue);
             StartCoroutine(Type());
         }
@@ -103,7 +103,7 @@ namespace  RPG.UI
 
         private void EndDialogue()
         {
-            uiAnimator.SetBool("OpenDialogueBox", false);
+            uiAnimator.SetBool("OpenUIBox", false);
             dialogueText.text = "";
 
             if(hasQuest)

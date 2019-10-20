@@ -25,7 +25,7 @@ public class QuestLog : MonoBehaviour, ISaveable
       {
           print(quest.name);
           return quest.name;
-      }
+      }  
         return true;
     }
 

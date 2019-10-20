@@ -38,7 +38,7 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadNewGame()
     {
-     //      if(fader != null){ StartCoroutine(fader.Fade(0, );}
+       //    if(fader != null)  { StartCoroutine(fader.Fade(1, 1));}
             SceneManager.LoadSceneAsync(OpeningScenename);
     }
 
