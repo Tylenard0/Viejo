@@ -23,9 +23,7 @@ public class PlayerStatsUI : MonoBehaviour
 
      private void Awake() 
     {
-            player = GameObject.FindWithTag("Player");
-            baseStats = player.GetComponent<BaseStats>();
-            healthComponent = player.GetComponent<Health>();
+        baseStats = player.GetComponent<BaseStats>();
     }
 
         // Update is called once per frame

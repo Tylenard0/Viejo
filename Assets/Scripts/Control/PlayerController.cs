@@ -23,7 +23,6 @@ namespace RPG.Control
         [SerializeField] CursorMapping[] cursorMappings = null;
         [SerializeField] float maxNavMeshProjectionDistance = 1f;
         [SerializeField] float selectCursorRaycastRadius = 1f;
-        CombatTarget nearestEnemy;
 
 
         private void Awake()
@@ -33,15 +32,6 @@ namespace RPG.Control
 
             private void Update()
         {
-
-            // Auto target / attach when pressing "T"
-            if (Input.GetKeyDown(KeyCode.T))
-            {
-                nearestEnemy = CombatTarget.IdentifyClosestCombatTarget(transform.position);
-                GetComponent<Fighter>().Attack(nearestEnemy.gameObject);
-            }
-
-
             if (InteractWithUI()) return;
             if (health.IsDead())
             {
@@ -51,8 +41,6 @@ namespace RPG.Control
 
             if (InteractWithComponent()) return;
             if (InteractWithMovement()) return;
-
-
 
             SetCursor(CursorType.None);
         }
@@ -159,33 +147,6 @@ namespace RPG.Control
         {
             return Camera.main.ScreenPointToRay(Input.mousePosition);
         }
-
-        // private void AutoTargetEnemy()
-        // {   
-        //     RaycastHit[] hits = Physics.SphereCastAll(transform.position, shoutDistance, Vector3.up, 0);
-        //     foreach (RaycastHit hit in hits)
-        //     {}
-        // }
-
-        Transform GetClosestEnemy(Transform[] enemies)
-        {
-            Transform bestTarget = null;
-            float closestDistanceSqr = Mathf.Infinity;
-            Vector3 currentPosition = transform.position;
-            foreach (Transform potentialTarget in enemies)
-            {
-                Vector3 directionToTarget = potentialTarget.position - currentPosition;
-                float dSqrToTarget = directionToTarget.sqrMagnitude;
-                if (dSqrToTarget < closestDistanceSqr)
-                {
-                    closestDistanceSqr = dSqrToTarget;
-                    bestTarget = potentialTarget;
-                }
-            }
-            Debug.Log(this + "targeting " + bestTarget.name);
-            return bestTarget;
-        }
-
     }
 }
 

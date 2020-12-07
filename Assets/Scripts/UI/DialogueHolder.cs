@@ -10,21 +10,16 @@ public class DialogueHolder : MonoBehaviour, IRaycastable
 
     [SerializeField] Dialogue dialogue;
     [SerializeField] bool remotelyTriggeredDialogue = false;
-    [SerializeField] bool questAccepted = false;
 
     private void ActivateDialogue(Dialogue dialogue)
     {
-            if(questAccepted == false)
-            {
             DialogueManager dialogueManager = FindObjectOfType<DialogueManager>();
             dialogueManager.CallActivateDialogue(dialogue);
-            questAccepted = true;
-            }
     }
 
     private void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject.tag == "Player" && remotelyTriggeredDialogue == true)
+            if (other.gameObject.tag == "Player")
             {
                 ActivateDialogue(dialogue);
             }
@@ -35,10 +30,9 @@ public class DialogueHolder : MonoBehaviour, IRaycastable
         if (Input.GetMouseButtonDown(0))
         {
             Vector3 newDestination = this.transform.position;
-            newDestination = newDestination + (Vector3.forward * -2f);
-            callingController.GetComponent<Mover>().StartMoveAction(newDestination,  2);
-            ActivateDialogue(dialogue);
-            
+            newDestination = newDestination + (this.transform.forward * 2);
+            callingController.GetComponent<Mover>().StartMoveAction(newDestination,  6);
+            //ActivateDialogue(dialogue);
         }
         return true;
     }

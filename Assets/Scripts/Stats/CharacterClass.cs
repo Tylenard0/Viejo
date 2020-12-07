@@ -11,8 +11,7 @@ public enum CharacterClass
         Player,
         Grunt,
         Archer,
-        Mage,
-        MiniBoss
+        Mage
     }
     
 }
