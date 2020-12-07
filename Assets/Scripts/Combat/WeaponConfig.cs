@@ -46,7 +46,10 @@ namespace RPG.Combat
 
         private void DestroyOldWeapon(Transform rightHand, Transform leftHand)
         {
+           if (rightHand != null)
+           {
             Transform oldWeapon = rightHand.Find(weaponName);
+           
             if(oldWeapon == null)
             {
                 oldWeapon = leftHand.Find(weaponName);
@@ -55,6 +58,7 @@ namespace RPG.Combat
 
             oldWeapon.name = "DESTROYING";
             Destroy(oldWeapon.gameObject);
+           }
         }
 
         private Transform GetHandTransform(Transform rightHand, Transform leftHand)

@@ -106,6 +106,13 @@ namespace RPG.Attributes
             isDead = true;
             print(this + " ded");
             PlayDeathAnimation();
+            NotifyQuestTracker();
+        }
+
+        private void NotifyQuestTracker()
+        {
+            // GetComponent<BaseStats>().GetClass();
+            // Notify Quest manager that this Class Type died;
         }
 
         private void PlayDeathAnimation()

@@ -63,6 +63,7 @@ namespace  RPG.UI
             StartCoroutine(Type());
         }
 
+        //Scroll out text a few letters at a time for readability
         IEnumerator Type()
         {
             dialogueText.text = characterName + ": ";
@@ -108,6 +109,7 @@ namespace  RPG.UI
 
             if(hasQuest)
             {
+                if(quest.isQuestComplete == false)
                 questManager.DisplayQuest(quest);
                // print("Has Quest " + quest.name + ".  All you have to is " +  quest.questDescription + " Rewards of " + quest.experienceReward + " experience, " + quest.goldReward + " gold!");
               //  if(quest.itemReward != null){print(" There is also a " + quest.itemReward.name + " in it for ya!");}

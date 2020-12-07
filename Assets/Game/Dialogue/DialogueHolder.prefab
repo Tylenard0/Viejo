@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 9077646209892505148}
   - component: {fileID: 5854530248888979387}
   - component: {fileID: 910298513876206002}
+  - component: {fileID: 3896633411671264815}
   m_Layer: 0
   m_Name: DialogueHolder
   m_TagString: Untagged
@@ -59,3 +60,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue: {fileID: 0}
   remotelyTriggeredDialogue: 0
+  questAccepted: 0
+--- !u!136 &3896633411671264815
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185858803467390540}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1.91
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}

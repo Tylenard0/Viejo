@@ -15,6 +15,6 @@ MonoBehaviour:
   characterName: Ol' Baldy
   sentences:
   - Hey old man!
-  - whoooo wheep boop
-  - bop
+  - These gaurds are killing people!
+  - You gotta help! Please stop them!
   quest: {fileID: 11400000, guid: 87d53ccef6ac76e4cbfba220a4906245, type: 2}

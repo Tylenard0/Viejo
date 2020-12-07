@@ -58,6 +58,11 @@ namespace RPG.Stats
             }
         }
 
+        public CharacterClass GetClass()
+        {
+            return characterClass;
+        }
+
         public int GetLevel()
         {
             return currentLevel.value;
